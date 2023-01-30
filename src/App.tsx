@@ -12,7 +12,7 @@ interface Gentleman {
 }
 
 const App = () => {
-  const gentlemanList: Gentleman[] = [
+  const gentlemenList: Gentleman[] = [
     {
       id: 1,
       name: "Bertin Osborne",
@@ -51,7 +51,11 @@ const App = () => {
         <h1 className="main-title">The pointing gentlemen</h1>
       </header>
       <section className="controls"></section>
-      <Info />
+      <Info
+        numberOfPointingGentlemen={
+          gentlemenList.filter(({ selected }) => selected).length
+        }
+      />
       <main className="main">
         <ul className="gentlemen"></ul>
       </main>
